@@ -1,0 +1,56 @@
+{
+  "system_prompt": {
+    "type": "text",
+    "description": "你的完整人设提示词，支持多行文本。",
+    "default": "你是一个 helpful assistant。",
+    "hint": "建议先用 Prompt 模板写出精简版人设（200 字左右效果最佳）"
+  },
+  "max_history_rounds": {
+    "type": "int",
+    "description": "硬裁剪模式下保留的最近对话轮数（仅在 clean_strategy=hard 时生效）",
+    "default": 5,
+    "min": 0,
+    "max": 1500
+  },
+  "clean_strategy": {
+    "type": "string",
+    "description": "历史清理策略（可选值：hard / progressive / length）",
+    "default": "hard",
+    "hint": "hard: 超过 max_history_rounds 直接截断；progressive: 渐进删除最早部分；length: 超过 max_history_length_kb 时裁掉前面部分"
+  },
+  "progressive_trigger_rounds": {
+    "type": "int",
+    "description": "渐进模式下触发清理的轮数阈值",
+    "default": 30,
+    "min": 5,
+    "max": 500
+  },
+  "progressive_keep_rounds": {
+    "type": "int",
+    "description": "渐进模式下至少保留的最近轮数",
+    "default": 15,
+    "min": 3,
+    "max": 100
+  },
+  "progressive_clean_ratio": {
+    "type": "float",
+    "description": "渐进模式下每次清理多余轮数的比例（0.1~0.5）",
+    "default": 0.3,
+    "min": 0.1,
+    "max": 0.5
+  },
+  "max_history_length_kb": {
+    "type": "int",
+    "description": "长度裁剪模式下触发裁切的上下文长度（KB，按字符数估算）",
+    "default": 800,
+    "min": 100,
+    "max": 2000
+  },
+  "max_keep_length_kb": {
+    "type": "int",
+    "description": "长度裁剪模式下裁切后保留的上下文长度（KB）",
+    "default": 400,
+    "min": 50,
+    "max": 1500
+  }
+}

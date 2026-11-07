@@ -1,0 +1,10 @@
+name: astrbot_plugin_memory_trimmer
+display_name: 记忆修剪器
+desc: 固定人设 + 多策略上下文管理（硬裁剪/渐进清理/长度裁切），智能控制上下文长度，稳定缓存命中。
+short_desc: 像园丁一样剪掉多余的上下文，大幅提升 DeepSeek 缓存命中率！
+version: 2.3.0
+author: FURRY南寒
+repo: https://github.com/FurryNanhan/astrbot_plugin_memory_trimmer
+support_platforms:
+  - aiocqhttp
+astrbot_version: ">=4.0.0"
